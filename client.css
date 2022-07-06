@@ -1,0 +1,152 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Noto Sans Kr', 'sans serif';
+    vertical-align: baseline;
+}
+
+body {
+    max-width: 100%;
+}
+
+.client {
+    max-width: 1400px;
+    text-align: center;
+}
+
+.client ul {
+    margin: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.client ul li {
+    width: calc(100% / 9);
+    font-size: 18px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.client ul li .img-wrap {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border: 3px solid #dddddd;
+    border-radius: 50%;
+}
+
+.client ul li .img-wrap img {
+    max-width: 100%;
+    padding: 20px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.client ul li p {
+    font-size: 16px;
+    padding-top: 15px;
+    word-break: break-all;
+}
+
+.more-btn {
+    display: none;
+    width: 70px;
+    line-height: 70px;
+    font-size: 60px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    background-color: darkblue;
+}
+
+.flip {
+    height: 100vh;
+}
+
+.animatable {
+    visibility: hidden;
+    animation-play-state: paused;
+}
+
+.animated {
+    animation-name: fadeInUp;
+    visibility: visible;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:1217px) {
+    .client ul {
+        margin: 0 5%;
+    }
+
+    .client ul li {
+        width: calc(100% / 8);
+    }
+
+    .client ul li:nth-child(25), .client ul li:nth-child(26),
+    .client ul li:nth-child(27) {
+        margin: 0 0 50px 0;
+        display: none;
+    }
+
+    .client ul li .img-wrap {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .client ul li p {
+        font-size: 14px;
+    }
+
+    .more-btn {
+        display: initial;
+    }
+}
+
+@media screen and (max-width:940px) {
+    .client ul {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .client ul li {
+        width: calc(100% / 4);
+        margin: 0 0 30px 0;
+    }
+
+    .client ul li .img-wrap {
+        width: 110px;
+        height: 110px;
+    }
+
+    .client ul li p {
+        font-size: 12px;
+    }
+
+    .more-btn {
+        width: 50px;
+        line-height: 50px;
+        font-size: 40px;
+    }
+}
